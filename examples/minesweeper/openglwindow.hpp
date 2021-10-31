@@ -15,8 +15,9 @@ class OpenGLWindow : public abcg::OpenGLWindow {
 
  private:
   enum class GameState { Start, Play, Won, Lost };
-  static const int m_N{9};  // Board size is m_N x m_N
-
+  static const int m_N{16};  // Board size is m_N x m_N
+  //define o número de bombas como 12% do tabuleiro, arredondado pra cima
+  int bombas = ceil(m_N * m_N * 0.12f);
   GameState m_gameState{GameState::Start};
   bool m_turn{true};                      // true = X, false = O
   std::array<char, m_N * m_N> m_bombas{};  // '\0', 'X' or 'O'
@@ -30,7 +31,8 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   void restart(); //função que reinicia o jogo
   void preencher_tabuleiro(int); //função que cria as bombas em posições aleatórias exceto a clicada
   void somar_vizinhos(int); //função que recebe uma célula e faz a soma de seus vizinhos
-  bool isVizinho(int, int);
+  bool isVizinho(int, int); //função que responde se um n possui um vizinho válido v
+  void clicar_nos_vizinhos(int); //função que clica em todos os vizinhos de uma celula com valor zero
 };
 
 #endif

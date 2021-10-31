@@ -91,6 +91,7 @@ void OpenGLWindow::paintUI() {
           if (ImGui::IsItemClicked()) {
             if (m_gameState == GameState::Start)
             {
+              fmt::print(stdout, "Primeira celula clicada: {}X{}.\n", i, j);
               preencher_tabuleiro(offset);
             }
             if (m_gameState == GameState::Play)
@@ -98,6 +99,11 @@ void OpenGLWindow::paintUI() {
               fmt::print(stdout, "Clicado na celula {}X{}.\n", i, j);
               m_clicado.at(offset) = true; //revelado o que está ocultado
               checkBoard(); //decidir se perdeu ou ganhou
+              if(m_bombas.at(offset) == '0')
+              {
+                fmt::print(stdout, "Celula {}X{} eh zero.\n", i, j);
+                clicar_nos_vizinhos(offset);
+              }
             }
           }
         }
@@ -124,34 +130,35 @@ void OpenGLWindow::paintUI() {
 void OpenGLWindow::checkBoard() {
   if (m_gameState != GameState::Play) return; //se ganhou ou perdeu, manter a tela igual
 
+  int contadas = 0;
   // checar nas linhas e colunas se tem uma bomba clicada
   for (const auto i : iter::range(m_N)) {
     for (const auto j : iter::range(m_N)) {
       const auto offset{i * m_N + j};
-      if(m_bombas.at(offset) == 'X' && m_clicado.at(offset) == true)
-      {
-        m_gameState = GameState::Lost;
+      if(m_clicado.at(offset)){
+        contadas++;
+        if(m_bombas.at(offset) == 'X')
+        {
+          fmt::print(stdout, "Bomba clicada em {}X{}.\n", i, j);
+          m_gameState = GameState::Lost;
+          m_clicado.fill(true); //revelar
+          return; //não continuar pra checar se ganhou
+        }
       }
     }
   }
 
-  //TODO:
-  //se o número for zero, clicar também em todos envolta (e chamar essa função recursivamente pra cada um)
-}
-
-//função para reiniciar o jogo para as configurações iniciais
-void OpenGLWindow::restart() {
-  m_gameState = GameState::Start;
-  m_bombas.fill('0');
-  m_clicado.fill(false);
-  fmt::print(stdout, "Jogo reiniciado.\n");
+  // checar se o jogador ganhou
+  if(contadas == m_N * m_N - bombas)
+  {
+     m_gameState = GameState::Won;
+     m_clicado.fill(true); //revelar
+  }
 }
 
 void OpenGLWindow::preencher_tabuleiro(int clicada)
 {
-  //define o número de bombas como 12% do tabuleiro, arredondado pra cima
-  const auto bombas = ceil(m_N * m_N * 0.12f);
-  fmt::print(stdout, "{} bombas geradas.\n", bombas);
+  fmt::print(stdout, "Gerar {} bombas.\n", bombas);
 
   int i = 0; //número de bombas já colocadas
   while(i < bombas){
@@ -174,8 +181,11 @@ void OpenGLWindow::preencher_tabuleiro(int clicada)
       //Pra cada vizinho, somar 1 ao número, mas só se esse vizinho não for uma bomba
       somar_vizinhos(offset);
     }
+    else
+    {
+      fmt::print(stdout, "Celula {} foi a clicada ou ja possuia bomba.\n", offset);
+    }
   }
-
   m_gameState = GameState::Play;
 }
 
@@ -224,4 +234,80 @@ void OpenGLWindow::somar_vizinhos(int n)
   v = n + m_N + 1;
   if(isVizinho(n, v) && m_bombas.at(v) != 'X')
     m_bombas.at(v) = m_bombas.at(v) + 1;
+}
+
+void OpenGLWindow::clicar_nos_vizinhos(int n)
+{
+  fmt::print(stdout, "Clicado nos vizinhos da celula {}.\n", n);
+  int v = n - m_N - 1;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n - m_N;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n - m_N + 1;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n - 1;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n + 1;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n + m_N - 1;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n + m_N;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+
+  v = n + m_N + 1;
+  if(isVizinho(n, v) && !m_clicado.at(v))
+  {
+    m_clicado.at(v) = true;
+    if(m_bombas.at(v) == '0')
+      clicar_nos_vizinhos(v);
+  }
+}
+
+//função para reiniciar o jogo para as configurações iniciais
+void OpenGLWindow::restart() {
+  m_gameState = GameState::Start;
+  m_bombas.fill('0');
+  m_clicado.fill(false);
+  fmt::print(stdout, "Jogo reiniciado.\n");
 }
