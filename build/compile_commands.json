@@ -1,0 +1,92 @@
+[
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_application.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_application.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_application.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_elapsedtimer.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_elapsedtimer.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_elapsedtimer.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_exception.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_exception.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_exception.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_image.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_image.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_image.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_openglfunctions.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_openglfunctions.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_openglfunctions.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_openglwindow.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_openglwindow.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_openglwindow.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_string.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_string.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_string.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\CMakeFiles\\abcg.dir\\abcg_trackball.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_trackball.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\abcg_trackball.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui_demo.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_demo.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_demo.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui_draw.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_draw.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_draw.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui_tables.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_tables.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_tables.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui_widgets.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_widgets.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_widgets.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui_impl_sdl.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_impl_sdl.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_impl_sdl.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -g -flto -fno-fat-lto-objects -o abcg\\external\\imgui\\CMakeFiles\\imgui.dir\\imgui_impl_opengl3.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_impl_opengl3.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\imgui\\imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -g -flto -fno-fat-lto-objects -std=gnu++2a -o abcg\\external\\fmt\\CMakeFiles\\fmt.dir\\format.cc.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\fmt\\format.cc",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\abcg\\external\\fmt\\format.cc"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a -o examples\\tictactoe\\CMakeFiles\\tictactoe.dir\\main.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\examples\\tictactoe\\main.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\examples\\tictactoe\\main.cpp"
+},
+{
+  "directory": "C:/Users/gabi_/Documents/Heber/CG/abcg/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/abcg/abcg/external -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a -o examples\\tictactoe\\CMakeFiles\\tictactoe.dir\\openglwindow.cpp.obj -c C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\examples\\tictactoe\\openglwindow.cpp",
+  "file": "C:\\Users\\gabi_\\Documents\\Heber\\CG\\abcg\\examples\\tictactoe\\openglwindow.cpp"
+}
+]

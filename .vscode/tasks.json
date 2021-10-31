@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "process",
+			"label": "build.bat",
+			"command": "build.bat",
+			"args": [],
+			"options": {},
+			"problemMatcher": [],
+			"group": "build",
+			"detail": "build.bat"
+		}
+	]
+}

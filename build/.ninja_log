@@ -1,0 +1,23 @@
+# ninja log v5
+24	343	6573803585650167	abcg/CMakeFiles/abcg.dir/abcg_string.cpp.obj	52ba093070272fd4
+19	369	6573803586328352	abcg/CMakeFiles/abcg.dir/abcg_image.cpp.obj	42dfb403daff4a
+12	401	6573803586388194	abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.obj	5ec51627101c9060
+9	406	6573803585430776	abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.obj	112ad0a9f525099d
+15	415	6573803585989260	abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.obj	b6b868baaafa5ee3
+22	422	6573803586138862	abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.obj	4ed3196882a6ab43
+6	438	6573803586298435	abcg/CMakeFiles/abcg.dir/abcg_application.cpp.obj	716b9d1e7b5bf84e
+2	447	6573803586637523	abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.obj	fa150337dfcd5681
+415	511	6573803589489894	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.obj	88cefce03314a708
+352	535	6573803589021155	abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.obj	2d6dd4ea337865e1
+406	553	6573803589669432	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.obj	6081b4b295114f4e
+375	554	6573803590048422	examples/tictactoe/CMakeFiles/tictactoe.dir/main.cpp.obj	b0fc8a4bb03efc4d
+447	574	6573803590188038	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj	1ea55bb3a3a722b9
+439	580	6573803590267822	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj	b61c31832bd02b73
+425	587	6573803589918759	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.obj	d46e42fac4e0491b
+524	631	6573803591005838	abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.obj	bd50c7ba5cd956a3
+540	638	6573803591005838	abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.obj	446a61d1cf3f7281
+641	886	6573803593708623	abcg/external/fmt/libfmt.a	c98f4e0ca3144d9b
+634	925	6573803594167378	abcg/external/imgui/libimgui.a	1b13598964b3b11f
+926	1138	6573803596291692	abcg/libabcg.a	b1ecb4d7551b39b9
+403	6451	6573803648910920	examples/tictactoe/CMakeFiles/tictactoe.dir/openglwindow.cpp.obj	6df924c5fb37219f
+6452	16193	0	bin/tictactoe.exe	5ff1e107917d9286
