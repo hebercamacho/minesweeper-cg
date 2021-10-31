@@ -19,7 +19,6 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   //define o número de bombas como 12% do tabuleiro, arredondado pra cima
   int bombas = ceil(m_N * m_N * 0.12f);
   GameState m_gameState{GameState::Start};
-  bool m_turn{true};                      // true = X, false = O
   std::array<char, m_N * m_N> m_bombas{};  // '\0', 'X' or 'O'
   std::array<bool, m_N * m_N> m_clicado{}; //true = revelado, false = oculto
 
