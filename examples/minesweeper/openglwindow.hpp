@@ -29,6 +29,8 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   void checkBoard(); //função que checa constantemente se o jogo terminou
   void restart(); //função que reinicia o jogo
   void preencher_tabuleiro(); //função que cria as bombas em posições aleatórias
+  void somar_vizinhos(int); //função que recebe uma célula e faz a soma de seus vizinhos
+  bool isVizinho(int, int);
 };
 
 #endif

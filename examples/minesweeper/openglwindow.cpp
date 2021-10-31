@@ -80,7 +80,7 @@ void OpenGLWindow::paintUI() {
       ImGui::Columns(m_N);
       // Pra cada coluna, criar um botão
       for (auto j : iter::range(m_N)) {
-        auto offset{i * m_N + j}; //offset = posição do botão atual no vetor
+        auto offset{i * m_N + j}; //offset = posicao do botão atual no vetor
         std::string text = m_clicado.at(offset) ? fmt::format("{}", m_bombas.at(offset)) : fmt::format(""); //texto pra ser colocado dentro do botão, dependendo se ele já foi clicado
         ImGui::Button(text.c_str(), ImVec2(-1, gridHeight / m_N)); //pra que esse -1?
         if (m_gameState == GameState::Play && !m_clicado.at(offset)) { //esse if permite clicar só se estiver vazio
@@ -152,18 +152,66 @@ void OpenGLWindow::preencher_tabuleiro()
 
     // Pegar uma célula aleatória (de zero a m_N^2 - 1)
     std::uniform_real_distribution<float> realDistribution(0.0f, m_N * m_N - 1.0f);
-    const auto offset = floor(realDistribution(m_randomEngine));
-    fmt::print(stdout, "Sorteada posição {}.\n", offset);
+    const int offset = floor(realDistribution(m_randomEngine));
+    fmt::print(stdout, "Sorteada posicao {}.\n", offset);
 
     //Preencher essa célula com uma bomba, se já não for uma
     if(m_bombas.at(offset) != 'X')
     {
       m_bombas.at(offset) = 'X';
       i++;
-      fmt::print(stdout, "Bomba colocada na posição {}.\n", offset);
-      fmt::print(stdout, "Agora existem {} bombas.\n", bombas);
-    }
+      fmt::print(stdout, "Bomba colocada na posicao {}.\n", offset);
+      fmt::print(stdout, "Agora existem {} bombas.\n", i);
 
-    //Pra cada vizinho, somar 1 ao número, mas só se esse vizinho não for uma bomba
+      //Pra cada vizinho, somar 1 ao número, mas só se esse vizinho não for uma bomba
+      somar_vizinhos(offset);
+    }
   }
+}
+
+bool OpenGLWindow::isVizinho(int n, int v)
+{
+  //regras que fazem de v um não-vizinho de n
+  if(  v < 0
+    || v >= m_N * m_N
+    || (n % m_N == 0 && v % m_N == m_N - 1)
+    || (n % m_N == m_N - 1 && v % m_N == 0)
+  )
+    return false;
+  return true;
+}
+
+void OpenGLWindow::somar_vizinhos(int n)
+{
+  int v = n - m_N - 1;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+  
+  v = n - m_N;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+
+  v = n - m_N + 1;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+
+  v = n - 1;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+
+  v = n + 1;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+
+  v = n + m_N - 1;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+
+  v = n + m_N;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
+
+  v = n + m_N + 1;
+  if(isVizinho(n, v) && m_bombas.at(v) != 'X')
+    m_bombas.at(v) = m_bombas.at(v) + 1;
 }
