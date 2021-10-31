@@ -48,12 +48,15 @@ void OpenGLWindow::paintUI() {
         ImGui::EndMenuBar();
       }
       if (restartSelected) restart();
-      if (preencherSelected) preencher_tabuleiro();
+      if (preencherSelected) preencher_tabuleiro(0);
     }
 
     // Texto explicativo (ganhou/perdeu/jogando)
     std::string text;
     switch (m_gameState) {
+      case GameState::Start:
+        text = "Clique em um quadrado para começar";
+        break;
       case GameState::Play:
         // text = fmt::format("{} turn", m_turn ? 'X' : 'O');
         text = "";
@@ -82,24 +85,30 @@ void OpenGLWindow::paintUI() {
       for (auto j : iter::range(m_N)) {
         auto offset{i * m_N + j}; //offset = posicao do botão atual no vetor
         std::string text = m_clicado.at(offset) ? fmt::format("{}", m_bombas.at(offset)) : fmt::format(""); //texto pra ser colocado dentro do botão, dependendo se ele já foi clicado
-        ImGui::Button(text.c_str(), ImVec2(-1, gridHeight / m_N)); //pra que esse -1?
-        if (m_gameState == GameState::Play && !m_clicado.at(offset)) { //esse if permite clicar só se estiver vazio
+        ImGui::Button(text.c_str(), ImVec2(appWindowWidth / m_N, gridHeight / m_N));
+        
+        if (!m_clicado.at(offset)) { //esse if permite clicar só se estiver vazio
           if (ImGui::IsItemClicked()) {
-            fmt::print(stdout, "Clicado na celula {}X{}.\n", i, j);
-            m_clicado.at(offset) = true; //revelado o que está ocultado
-            checkBoard(); //decidir se perdeu ou ganhou
-            //m_turn = !m_turn; //troca de turno
+            if (m_gameState == GameState::Start)
+            {
+              preencher_tabuleiro(offset);
+            }
+            if (m_gameState == GameState::Play)
+            {
+              fmt::print(stdout, "Clicado na celula {}X{}.\n", i, j);
+              m_clicado.at(offset) = true; //revelado o que está ocultado
+              checkBoard(); //decidir se perdeu ou ganhou
+            }
           }
         }
         ImGui::NextColumn();
       }
-      if (i < 2) ImGui::Separator(); //precisa?
     }
-    ImGui::Columns(1); //não sei o que faz
-    ImGui::PopFont(); //não sei o que faz
-
-    ImGui::Spacing(); //não sei o que faz
-    ImGui::Spacing(); //não sei o que faz
+    ImGui::Columns(1); //coluna do botão de restart
+    ImGui::PopFont(); //se tirar quebra
+    //faz um espacinho pra separar o botão de restart
+    ImGui::Spacing(); 
+    ImGui::Spacing();
 
     // "Restart game" button
     {
@@ -127,19 +136,18 @@ void OpenGLWindow::checkBoard() {
   }
 
   //TODO:
-  //aparecer os números
   //se o número for zero, clicar também em todos envolta (e chamar essa função recursivamente pra cada um)
 }
 
 //função para reiniciar o jogo para as configurações iniciais
 void OpenGLWindow::restart() {
-  m_gameState = GameState::Play;
+  m_gameState = GameState::Start;
   m_bombas.fill('0');
   m_clicado.fill(false);
   fmt::print(stdout, "Jogo reiniciado.\n");
 }
 
-void OpenGLWindow::preencher_tabuleiro()
+void OpenGLWindow::preencher_tabuleiro(int clicada)
 {
   //define o número de bombas como 12% do tabuleiro, arredondado pra cima
   const auto bombas = ceil(m_N * m_N * 0.12f);
@@ -155,8 +163,8 @@ void OpenGLWindow::preencher_tabuleiro()
     const int offset = floor(realDistribution(m_randomEngine));
     fmt::print(stdout, "Sorteada posicao {}.\n", offset);
 
-    //Preencher essa célula com uma bomba, se já não for uma
-    if(m_bombas.at(offset) != 'X')
+    //Preencher essa célula com uma bomba, se  não for a clicada e se já não for uma bomba
+    if(offset != clicada && m_bombas.at(offset) != 'X')
     {
       m_bombas.at(offset) = 'X';
       i++;
@@ -167,6 +175,8 @@ void OpenGLWindow::preencher_tabuleiro()
       somar_vizinhos(offset);
     }
   }
+
+  m_gameState = GameState::Play;
 }
 
 bool OpenGLWindow::isVizinho(int n, int v)
