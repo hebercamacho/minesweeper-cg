@@ -2,7 +2,7 @@
 
 #include <fmt/core.h>
 #include <imgui.h>
-
+#include <chrono>
 #include <cppitertools/itertools.hpp>
 
 void OpenGLWindow::initializeGL() {
@@ -19,86 +19,91 @@ void OpenGLWindow::initializeGL() {
   restart();
 }
 
-void OpenGLWindow::paintGL() { abcg::glClear(GL_COLOR_BUFFER_BIT); }
+void OpenGLWindow::paintGL() { 
+  abcg::glClear(GL_COLOR_BUFFER_BIT); 
+}
 
 void OpenGLWindow::paintUI() {
   const auto appWindowWidth{static_cast<float>(getWindowSettings().width)};
   const auto appWindowHeight{static_cast<float>(getWindowSettings().height)};
 
-  // "Tic-Tac-Toe" window
+  // "Campo minado" window
   {
     ImGui::SetNextWindowSize(ImVec2(appWindowWidth, appWindowHeight));
     ImGui::SetNextWindowPos(ImVec2(0, 0));
 
     const auto flags{ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoResize};
-    ImGui::Begin("Tic-Tac-Toe", nullptr, flags);
+    ImGui::Begin("Campo minado", nullptr, flags);
 
-    // Menu
+    // Menu com botão de restart pra reiniciar o jogo
     {
       bool restartSelected{};
+      bool preencherSelected{};
       if (ImGui::BeginMenuBar()) {
         if (ImGui::BeginMenu("Game")) {
           ImGui::MenuItem("Restart", nullptr, &restartSelected);
+          ImGui::MenuItem("Preencher", nullptr, &preencherSelected);
           ImGui::EndMenu();
         }
         ImGui::EndMenuBar();
       }
       if (restartSelected) restart();
+      if (preencherSelected) preencher_tabuleiro();
     }
 
-    // Static text (win/draw message)
+    // Texto explicativo (ganhou/perdeu/jogando)
     std::string text;
     switch (m_gameState) {
       case GameState::Play:
-        text = fmt::format("{} turn", m_turn ? 'X' : 'O');
+        // text = fmt::format("{} turn", m_turn ? 'X' : 'O');
+        text = "";
         break;
-      case GameState::Draw:
-        text = "Draw!";
+      case GameState::Won:
+        text = "Você ganhou!";
         break;
-      case GameState::WinX:
-        text = "X is the winner!";
-        break;
-      case GameState::WinO:
-        text = "O is the winner!";
+      case GameState::Lost:
+        text = "Você perdeu!";
         break;
     }
+    //Centralizar texto na tela
     ImGui::SetCursorPosX(
         (appWindowWidth - ImGui::CalcTextSize(text.c_str()).x) / 2);
     ImGui::Text("%s", text.c_str());
     ImGui::Spacing();
     ImGui::Spacing();
 
-    // Create game board
+    // Criar tabuleiro
     const auto gridHeight{appWindowHeight - 22 - 58 - (m_N * 10) - 58};
     ImGui::PushFont(m_font);
-    // For each row
+    // Pra cada linha, criar uma coluna
     for (auto i : iter::range(m_N)) {
       ImGui::Columns(m_N);
-      // For each column
+      // Pra cada coluna, criar um botão
       for (auto j : iter::range(m_N)) {
-        auto offset{i * m_N + j};
-        std::string text{fmt::format("{}", m_board.at(offset))};
-        ImGui::Button(text.c_str(), ImVec2(-1, gridHeight / m_N));
-        if (m_gameState == GameState::Play && m_board.at(offset) == 0) {
+        auto offset{i * m_N + j}; //offset = posição do botão atual no vetor
+        std::string text = m_clicado.at(offset) ? fmt::format("{}", m_bombas.at(offset)) : fmt::format(""); //texto pra ser colocado dentro do botão, dependendo se ele já foi clicado
+        ImGui::Button(text.c_str(), ImVec2(-1, gridHeight / m_N)); //pra que esse -1?
+        if (m_gameState == GameState::Play && !m_clicado.at(offset)) { //esse if permite clicar só se estiver vazio
           if (ImGui::IsItemClicked()) {
-            m_board.at(offset) = m_turn ? 'X' : 'O';
-            checkBoard();
-            m_turn = !m_turn;
+            fmt::print(stdout, "Clicado na celula {}X{}.\n", i, j);
+            m_clicado.at(offset) = true; //revelado o que está ocultado
+            checkBoard(); //decidir se perdeu ou ganhou
+            //m_turn = !m_turn; //troca de turno
           }
         }
         ImGui::NextColumn();
       }
-      if (i < 2) ImGui::Separator();
+      if (i < 2) ImGui::Separator(); //precisa?
     }
-    ImGui::Columns(1);
-    ImGui::PopFont();
+    ImGui::Columns(1); //não sei o que faz
+    ImGui::PopFont(); //não sei o que faz
 
-    ImGui::Spacing();
-    ImGui::Spacing();
+    ImGui::Spacing(); //não sei o que faz
+    ImGui::Spacing(); //não sei o que faz
 
     // "Restart game" button
     {
-      if (ImGui::Button("Restart game", ImVec2(-1, 50.0f))) {
+      if (ImGui::Button("Reiniciar jogo", ImVec2(-1, 50.0f))) {
         restart();
       }
     }
@@ -108,86 +113,57 @@ void OpenGLWindow::paintUI() {
 }
 
 void OpenGLWindow::checkBoard() {
-  if (m_gameState != GameState::Play) return;
+  if (m_gameState != GameState::Play) return; //se ganhou ou perdeu, manter a tela igual
 
-  // Check rows
-  for (const auto i : iter::range(m_N)) {
-    std::string concatenation{};
-    for (const auto j : iter::range(m_N)) {
-      const auto offset{i * m_N + j};
-      concatenation += m_board.at(offset);
-    }
-    if (concatenation == std::string(m_N, 'X')) {
-      m_gameState = GameState::WinX;
-      return;
-    }
-    if (concatenation == std::string(m_N, 'O')) {
-      m_gameState = GameState::WinO;
-      return;
-    }
-  }
-
-  // Check columns
-  for (const auto j : iter::range(m_N)) {
-    std::string concatenation{};
-    for (const auto i : iter::range(m_N)) {
-      const auto offset{i * m_N + j};
-      concatenation += m_board.at(offset);
-    }
-    if (concatenation == std::string(m_N, 'X')) {
-      m_gameState = GameState::WinX;
-      return;
-    }
-    if (concatenation == std::string(m_N, 'O')) {
-      m_gameState = GameState::WinO;
-      return;
-    }
-  }
-
-  // Check main diagonal
-  std::string concatenation{};
-  for (const auto i : iter::range(m_N)) {
-    const auto offset{i * m_N + i};
-    concatenation += m_board.at(offset);
-  }
-  if (concatenation == std::string(m_N, 'X')) {
-    m_gameState = GameState::WinX;
-    return;
-  }
-  if (concatenation == std::string(m_N, 'O')) {
-    m_gameState = GameState::WinO;
-    return;
-  }
-
-  // Check inverse diagonal
-  concatenation.clear();
-  for (const auto i : iter::range(m_N)) {
-    const auto offset{i * m_N + (m_N - i - 1)};
-    concatenation += m_board.at(offset);
-  }
-  if (concatenation == std::string(m_N, 'X')) {
-    m_gameState = GameState::WinX;
-    return;
-  }
-  if (concatenation == std::string(m_N, 'O')) {
-    m_gameState = GameState::WinO;
-    return;
-  }
-
-  // Check draw
-  concatenation.clear();
+  // checar nas linhas e colunas se tem uma bomba clicada
   for (const auto i : iter::range(m_N)) {
     for (const auto j : iter::range(m_N)) {
       const auto offset{i * m_N + j};
-      if (m_board.at(offset) != 0) concatenation += m_board.at(offset);
+      if(m_bombas.at(offset) == 'X' && m_clicado.at(offset) == true)
+      {
+        m_gameState = GameState::Lost;
+      }
     }
   }
-  if (concatenation.length() == m_N * m_N) {
-    m_gameState = GameState::Draw;
-  }
+
+  //TODO:
+  //aparecer os números
+  //se o número for zero, clicar também em todos envolta (e chamar essa função recursivamente pra cada um)
 }
 
+//função para reiniciar o jogo para as configurações iniciais
 void OpenGLWindow::restart() {
   m_gameState = GameState::Play;
-  m_board.fill(0);
+  m_bombas.fill('0');
+  m_clicado.fill(false);
+  fmt::print(stdout, "Jogo reiniciado.\n");
+}
+
+void OpenGLWindow::preencher_tabuleiro()
+{
+  //define o número de bombas como 12% do tabuleiro, arredondado pra cima
+  const auto bombas = ceil(m_N * m_N * 0.12f);
+  fmt::print(stdout, "{} bombas geradas.\n", bombas);
+
+  int i = 0; //número de bombas já colocadas
+  while(i < bombas){
+    // Iniciar gerador de números aleatórios
+    m_randomEngine.seed(std::chrono::steady_clock::now().time_since_epoch().count());
+
+    // Pegar uma célula aleatória (de zero a m_N^2 - 1)
+    std::uniform_real_distribution<float> realDistribution(0.0f, m_N * m_N - 1.0f);
+    const auto offset = floor(realDistribution(m_randomEngine));
+    fmt::print(stdout, "Sorteada posição {}.\n", offset);
+
+    //Preencher essa célula com uma bomba, se já não for uma
+    if(m_bombas.at(offset) != 'X')
+    {
+      m_bombas.at(offset) = 'X';
+      i++;
+      fmt::print(stdout, "Bomba colocada na posição {}.\n", offset);
+      fmt::print(stdout, "Agora existem {} bombas.\n", bombas);
+    }
+
+    //Pra cada vizinho, somar 1 ao número, mas só se esse vizinho não for uma bomba
+  }
 }

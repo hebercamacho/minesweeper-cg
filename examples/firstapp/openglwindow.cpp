@@ -55,10 +55,10 @@ void OpenGLWindow::paintUI() {
       case GameState::Draw:
         text = "Draw!";
         break;
-      case GameState::WinX:
+      case GameState::Won:
         text = "X is the winner!";
         break;
-      case GameState::WinO:
+      case GameState::Lost:
         text = "O is the winner!";
         break;
     }
@@ -77,11 +77,11 @@ void OpenGLWindow::paintUI() {
       // For each column
       for (auto j : iter::range(m_N)) {
         auto offset{i * m_N + j};
-        std::string text{fmt::format("{}", m_board.at(offset))};
+        std::string text{fmt::format("{}", m_bombas.at(offset))};
         ImGui::Button(text.c_str(), ImVec2(-1, gridHeight / m_N));
-        if (m_gameState == GameState::Play && m_board.at(offset) == 0) {
+        if (m_gameState == GameState::Play && m_bombas.at(offset) == 0) {
           if (ImGui::IsItemClicked()) {
-            m_board.at(offset) = m_turn ? 'X' : 'O';
+            m_bombas.at(offset) = m_turn ? 'X' : 'O';
             checkBoard();
             m_turn = !m_turn;
           }
@@ -115,14 +115,14 @@ void OpenGLWindow::checkBoard() {
     std::string concatenation{};
     for (const auto j : iter::range(m_N)) {
       const auto offset{i * m_N + j};
-      concatenation += m_board.at(offset);
+      concatenation += m_bombas.at(offset);
     }
     if (concatenation == std::string(m_N, 'X')) {
-      m_gameState = GameState::WinX;
+      m_gameState = GameState::Won;
       return;
     }
     if (concatenation == std::string(m_N, 'O')) {
-      m_gameState = GameState::WinO;
+      m_gameState = GameState::Lost;
       return;
     }
   }
@@ -132,14 +132,14 @@ void OpenGLWindow::checkBoard() {
     std::string concatenation{};
     for (const auto i : iter::range(m_N)) {
       const auto offset{i * m_N + j};
-      concatenation += m_board.at(offset);
+      concatenation += m_bombas.at(offset);
     }
     if (concatenation == std::string(m_N, 'X')) {
-      m_gameState = GameState::WinX;
+      m_gameState = GameState::Won;
       return;
     }
     if (concatenation == std::string(m_N, 'O')) {
-      m_gameState = GameState::WinO;
+      m_gameState = GameState::Lost;
       return;
     }
   }
@@ -148,14 +148,14 @@ void OpenGLWindow::checkBoard() {
   std::string concatenation{};
   for (const auto i : iter::range(m_N)) {
     const auto offset{i * m_N + i};
-    concatenation += m_board.at(offset);
+    concatenation += m_bombas.at(offset);
   }
   if (concatenation == std::string(m_N, 'X')) {
-    m_gameState = GameState::WinX;
+    m_gameState = GameState::Won;
     return;
   }
   if (concatenation == std::string(m_N, 'O')) {
-    m_gameState = GameState::WinO;
+    m_gameState = GameState::Lost;
     return;
   }
 
@@ -163,14 +163,14 @@ void OpenGLWindow::checkBoard() {
   concatenation.clear();
   for (const auto i : iter::range(m_N)) {
     const auto offset{i * m_N + (m_N - i - 1)};
-    concatenation += m_board.at(offset);
+    concatenation += m_bombas.at(offset);
   }
   if (concatenation == std::string(m_N, 'X')) {
-    m_gameState = GameState::WinX;
+    m_gameState = GameState::Won;
     return;
   }
   if (concatenation == std::string(m_N, 'O')) {
-    m_gameState = GameState::WinO;
+    m_gameState = GameState::Lost;
     return;
   }
 
@@ -179,7 +179,7 @@ void OpenGLWindow::checkBoard() {
   for (const auto i : iter::range(m_N)) {
     for (const auto j : iter::range(m_N)) {
       const auto offset{i * m_N + j};
-      if (m_board.at(offset) != 0) concatenation += m_board.at(offset);
+      if (m_bombas.at(offset) != 0) concatenation += m_bombas.at(offset);
     }
   }
   if (concatenation.length() == m_N * m_N) {
@@ -189,5 +189,5 @@ void OpenGLWindow::checkBoard() {
 
 void OpenGLWindow::restart() {
   m_gameState = GameState::Play;
-  m_board.fill(0);
+  m_bombas.fill(0);
 }
