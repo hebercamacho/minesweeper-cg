@@ -34,13 +34,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/bin/
+cmake_ninja_workdir = C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/bin/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\bin && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\bin"
+  COMMAND = cmd.exe /C "cd /D C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\bin && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\bin"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -52,7 +52,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\bin && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\bin"
+  COMMAND = cmd.exe /C "cd /D C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\bin && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\bin"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -68,9 +68,9 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_boo: phony || cmake_object_order_depends_target_foo
 
-build CMakeFiles/boo.dir/main.c.obj: C_COMPILER__boo_ C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/src/main.c || cmake_object_order_depends_target_boo
-  DEP_FILE = CMakeFiles\boo.dir\main.c.obj.d
-  FLAGS = -flto -fno-fat-lto-objects
+build CMakeFiles/boo.dir/main.c.o: C_COMPILER__boo_ C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/src/main.c || cmake_object_order_depends_target_boo
+  DEP_FILE = CMakeFiles\boo.dir\main.c.o.d
+  FLAGS = -flto=thin
   OBJECT_DIR = CMakeFiles\boo.dir
   OBJECT_FILE_DIR = CMakeFiles\boo.dir
 
@@ -80,17 +80,16 @@ build CMakeFiles/boo.dir/main.c.obj: C_COMPILER__boo_ C$:/Users/gabi_/Documents/
 
 
 #############################################
-# Link the executable boo.exe
+# Link the executable boo.js
 
-build boo.exe: C_EXECUTABLE_LINKER__boo_ CMakeFiles/boo.dir/main.c.obj | libfoo.a || libfoo.a
-  FLAGS = -flto -fno-fat-lto-objects
-  LINK_LIBRARIES = libfoo.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build boo.js: C_EXECUTABLE_LINKER__boo_ CMakeFiles/boo.dir/main.c.o | libfoo.a || libfoo.a
+  FLAGS = -flto=thin
+  LINK_LIBRARIES = libfoo.a
   OBJECT_DIR = CMakeFiles\boo.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = boo.exe
-  TARGET_IMPLIB = libboo.dll.a
-  TARGET_PDB = boo.exe.dbg
+  TARGET_FILE = boo.js
+  TARGET_PDB = boo.js.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target foo
@@ -101,9 +100,9 @@ build boo.exe: C_EXECUTABLE_LINKER__boo_ CMakeFiles/boo.dir/main.c.obj | libfoo.
 
 build cmake_object_order_depends_target_foo: phony || CMakeFiles/foo.dir
 
-build CMakeFiles/foo.dir/foo.c.obj: C_COMPILER__foo_ C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/src/foo.c || cmake_object_order_depends_target_foo
-  DEP_FILE = CMakeFiles\foo.dir\foo.c.obj.d
-  FLAGS = -flto -fno-fat-lto-objects
+build CMakeFiles/foo.dir/foo.c.o: C_COMPILER__foo_ C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/src/foo.c || cmake_object_order_depends_target_foo
+  DEP_FILE = CMakeFiles\foo.dir\foo.c.o.d
+  FLAGS = -flto=thin
   OBJECT_DIR = CMakeFiles\foo.dir
   OBJECT_FILE_DIR = CMakeFiles\foo.dir
 
@@ -115,8 +114,8 @@ build CMakeFiles/foo.dir/foo.c.obj: C_COMPILER__foo_ C$:/Users/gabi_/Documents/H
 #############################################
 # Link the static library libfoo.a
 
-build libfoo.a: C_STATIC_LIBRARY_LINKER__foo_ CMakeFiles/foo.dir/foo.c.obj
-  LANGUAGE_COMPILE_FLAGS = -flto -fno-fat-lto-objects
+build libfoo.a: C_STATIC_LIBRARY_LINKER__foo_ CMakeFiles/foo.dir/foo.c.o
+  LANGUAGE_COMPILE_FLAGS = -flto=thin
   OBJECT_DIR = CMakeFiles\foo.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -126,7 +125,7 @@ build libfoo.a: C_STATIC_LIBRARY_LINKER__foo_ CMakeFiles/foo.dir/foo.c.obj
 # =============================================================================
 # Target aliases.
 
-build boo: phony boo.exe
+build boo: phony boo.js
 
 build foo: phony libfoo.a
 
@@ -136,9 +135,9 @@ build foo: phony libfoo.a
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/bin
+# Folder: C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/bin
 
-build all: phony boo.exe libfoo.a
+build all: phony boo.js libfoo.a
 
 # =============================================================================
 # Built-in targets
@@ -147,14 +146,14 @@ build all: phony boo.exe libfoo.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/3.21.3/CMakeCCompiler.cmake C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/3.21.3/CMakeRCCompiler.cmake C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/3.21.3/CMakeSystem.cmake C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/src/CMakeLists.txt C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt
+build build.ninja: RERUN_CMAKE | C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/3.21.3/CMakeCCompiler.cmake C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/3.21.3/CMakeSystem.cmake C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/src/CMakeLists.txt C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/3.21.3/CMakeCCompiler.cmake C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/3.21.3/CMakeRCCompiler.cmake C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/3.21.3/CMakeSystem.cmake C$:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/src/CMakeLists.txt C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt: phony
+build C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/3.21.3/CMakeCCompiler.cmake C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/3.21.3/CMakeSystem.cmake C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/src/CMakeLists.txt C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt: phony
 
 
 #############################################

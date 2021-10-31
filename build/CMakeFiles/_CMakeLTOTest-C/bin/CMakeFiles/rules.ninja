@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule C_COMPILER__boo_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\msys64\mingw64\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -o $out -c $in
+  command = C:\Users\gabi_\Documents\Heber\CG\emsdk\upstream\emscripten\emcc.bat $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -33,7 +33,7 @@ rule C_COMPILER__boo_
 # Rule for linking C executable.
 
 rule C_EXECUTABLE_LINKER__boo_
-  command = cmd.exe /C "$PRE_LINK && C:\msys64\mingw64\bin\gcc.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\Users\gabi_\Documents\Heber\CG\emsdk\upstream\emscripten\emcc.bat $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 
@@ -44,7 +44,7 @@ rule C_EXECUTABLE_LINKER__boo_
 rule C_COMPILER__foo_
   depfile = $DEP_FILE
   deps = gcc
-  command = C:\msys64\mingw64\bin\gcc.exe $DEFINES $INCLUDES $FLAGS -o $out -c $in
+  command = C:\Users\gabi_\Documents\Heber\CG\emsdk\upstream\emscripten\emcc.bat $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -52,7 +52,7 @@ rule C_COMPILER__foo_
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER__foo_
-  command = cmd.exe /C "$PRE_LINK && C:\msys64\mingw64\bin\cmake.exe -E rm -f $TARGET_FILE && "C:/msys64/mingw64/bin/gcc-ar.exe" cr $TARGET_FILE $LINK_FLAGS $in && "C:/msys64/mingw64/bin/gcc-ranlib.exe" $TARGET_FILE && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\msys64\mingw64\bin\cmake.exe -E rm -f $TARGET_FILE && "C:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/emar.bat" cr $TARGET_FILE $LINK_FLAGS $in && "C:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/emranlib.bat" $TARGET_FILE && $POST_BUILD"
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
 
@@ -61,7 +61,7 @@ rule C_STATIC_LIBRARY_LINKER__foo_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\gabi_\Documents\Heber\CG\abcg\build\CMakeFiles\_CMakeLTOTest-C\bin
+  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\CMakeFiles\_CMakeLTOTest-C\bin
   description = Re-running CMake...
   generator = 1
 

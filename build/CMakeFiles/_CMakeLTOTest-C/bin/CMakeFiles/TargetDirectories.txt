@@ -1,4 +1,4 @@
-C:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/rebuild_cache.dir
-C:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/edit_cache.dir
-C:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir
-C:/Users/gabi_/Documents/Heber/CG/abcg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir
+C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/rebuild_cache.dir
+C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/edit_cache.dir
+C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir
+C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir
