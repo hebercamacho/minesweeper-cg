@@ -15,11 +15,11 @@ class OpenGLWindow : public abcg::OpenGLWindow {
 
  private:
   enum class GameState { Start, Play, Won, Lost };
-  static const int m_N{16};  // Board size is m_N x m_N
+  static const int m_N{9};  // tamanho do tabuleiro
   //define o número de bombas como 12% do tabuleiro, arredondado pra cima
   int bombas = ceil(m_N * m_N * 0.12f);
   GameState m_gameState{GameState::Start};
-  std::array<char, m_N * m_N> m_bombas{};  // '\0', 'X' or 'O'
+  std::array<char, m_N * m_N> m_bombas{};  // representação do conteudo de uma célula, onde X = bomba e 0-9 = número de bombas vizinhas
   std::array<bool, m_N * m_N> m_clicado{}; //true = revelado, false = oculto
 
   ImFont* m_font{};

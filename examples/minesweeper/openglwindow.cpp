@@ -45,12 +45,31 @@ void OpenGLWindow::paintUI() {
           ImGui::MenuItem("Preencher", nullptr, &preencherSelected);
           ImGui::EndMenu();
         }
+        if (ImGui::BeginMenu("Options"))
+        {
+            static bool enabled = true;
+            ImGui::MenuItem("Enabled", "", &enabled);
+            static int n = 0;
+            ImGui::Combo("Combo", &n, "Facil (9x9)\0Medio(16x16)\0Dificil(21x21)\0\0");
+            // switch(n)
+            // {
+            //   case 0:
+            //   m_N = 9; break;
+            //   case 1:
+            //   m_N = 16; break;
+            //   case 2:
+            //   m_N = 21; break;
+            //   default: 
+            //   m_N = 9; break;
+            // }
+            ImGui::EndMenu();
+        }
         ImGui::EndMenuBar();
       }
       if (restartSelected) restart();
       if (preencherSelected) preencher_tabuleiro(0);
     }
-
+    
     // Texto explicativo (ganhou/perdeu/jogando)
     std::string text;
     switch (m_gameState) {
@@ -59,7 +78,7 @@ void OpenGLWindow::paintUI() {
         break;
       case GameState::Play:
         // text = fmt::format("{} turn", m_turn ? 'X' : 'O');
-        text = "";
+        text = "Muito bem, continue!";
         break;
       case GameState::Won:
         text = "Você ganhou!";
@@ -80,11 +99,18 @@ void OpenGLWindow::paintUI() {
     ImGui::PushFont(m_font);
     // Pra cada linha, criar uma coluna
     for (auto i : iter::range(m_N)) {
-      ImGui::Columns(m_N);
+      ImGui::Columns(m_N, nullptr, GL_FALSE);
       // Pra cada coluna, criar um botão
       for (auto j : iter::range(m_N)) {
         auto offset{i * m_N + j}; //offset = posicao do botão atual no vetor
-        std::string text = m_clicado.at(offset) ? fmt::format("{}", m_bombas.at(offset)) : fmt::format(""); //texto pra ser colocado dentro do botão, dependendo se ele já foi clicado
+        //texto pra ser colocado dentro do botão, dependendo se ele já foi clicado e se não for zero
+        std::string text = fmt::format("");
+        if(m_clicado.at(offset)){
+          if(m_bombas.at(offset) == '0')
+            text = fmt::format(".");
+          else
+            text = fmt::format("{}", m_bombas.at(offset));
+        }
         ImGui::Button(text.c_str(), ImVec2(appWindowWidth / m_N, gridHeight / m_N));
         
         if (!m_clicado.at(offset)) { //esse if permite clicar só se estiver vazio
