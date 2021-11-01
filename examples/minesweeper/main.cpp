@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
     // Create OpenGL window
     auto window{std::make_unique<OpenGLWindow>()};
     window->setWindowSettings(
-        {.width = 600, .height = 600, .title = "Campo minado"});
+        {.width = 600, .height = 600, .showFullscreenButton = false, .title = "Campo minado"});
 
     // Run application
     app.run(std::move(window));

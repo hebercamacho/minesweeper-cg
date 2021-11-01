@@ -6,19 +6,28 @@
 #include <array>
 #include <random>
 #include "abcg.hpp"
+#include "gamedata.hpp"
 
 class OpenGLWindow : public abcg::OpenGLWindow {
  protected:
+  void handleEvent(SDL_Event& event) override;
   void initializeGL() override;
   void paintGL() override;
   void paintUI() override;
+  void terminateGL() override;
 
  private:
-  enum class GameState { Start, Play, Won, Lost };
+  GLuint m_objectsProgram{};
+
+  int m_viewportWidth{};
+  int m_viewportHeight{};
+  GameData m_gameData;
+
+  // enum class GameState { Start, Play, Won, Lost };
   static const int m_N{9};  // tamanho do tabuleiro
   //define o número de bombas como 12% do tabuleiro, arredondado pra cima
   int bombas = ceil(m_N * m_N * 0.12f);
-  GameState m_gameState{GameState::Start};
+  // GameState m_gameState{GameState::Start};
   std::array<char, m_N * m_N> m_bombas{};  // representação do conteudo de uma célula, onde X = bomba e 0-9 = número de bombas vizinhas
   std::array<bool, m_N * m_N> m_clicado{}; //true = revelado, false = oculto
 

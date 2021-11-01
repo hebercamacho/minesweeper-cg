@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: abcg
-# Configurations: Release
+# Configurations: Debug
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Release
+CONFIGURATION = Debug
 # =============================================================================
 # Include auxiliary files.
 
@@ -102,61 +102,77 @@ build abcg/edit_cache: phony abcg/CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_abcg: phony || cmake_object_order_depends_target_fmt cmake_object_order_depends_target_imgui
 
-build abcg/CMakeFiles/abcg.dir/abcg_application.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_application.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_application.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_application.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_application.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_application.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_elapsedtimer.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_elapsedtimer.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_elapsedtimer.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_elapsedtimer.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_exception.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_exception.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_exception.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_exception.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_image.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_image.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_image.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_image.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_image.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_image.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_openglfunctions.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_openglfunctions.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_openglfunctions.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_openglfunctions.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_openglwindow.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_openglwindow.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_openglwindow.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_openglwindow.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_string.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_string.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_string.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_string.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_string.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_string.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
-build abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_trackball.cpp || cmake_object_order_depends_target_abcg
-  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_trackball.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.obj: CXX_COMPILER__abcg_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/abcg_trackball.cpp || cmake_object_order_depends_target_abcg
+  DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_trackball.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
+  TARGET_PDB = abcg\libabcg.pdb
 
 
 # =============================================================================
@@ -166,13 +182,14 @@ build abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.o: CXX_COMPILER__abcg_Release 
 #############################################
 # Link the static library abcg\libabcg.a
 
-build abcg/libabcg.a: CXX_STATIC_LIBRARY_LINKER__abcg_Release abcg/CMakeFiles/abcg.dir/abcg_application.cpp.o abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.o abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.o abcg/CMakeFiles/abcg.dir/abcg_image.cpp.o abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.o abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.o abcg/CMakeFiles/abcg.dir/abcg_string.cpp.o abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.o || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a
-  LANGUAGE_COMPILE_FLAGS = -O3 -DNDEBUG -flto=thin
+build abcg/libabcg.a: CXX_STATIC_LIBRARY_LINKER__abcg_Debug abcg/CMakeFiles/abcg.dir/abcg_application.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_image.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_string.cpp.obj abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.obj || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a
+  LANGUAGE_COMPILE_FLAGS = -g -flto -fno-fat-lto-objects
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = abcg\CMakeFiles\abcg.dir\abcg.pdb
   TARGET_FILE = abcg\libabcg.a
-  TARGET_PDB = abcg.a.dbg
+  TARGET_PDB = abcg\libabcg.pdb
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -241,54 +258,68 @@ build abcg/external/imgui/edit_cache: phony abcg/external/imgui/CMakeFiles/edit_
 
 build cmake_object_order_depends_target_imgui: phony || abcg/external/imgui/CMakeFiles/imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_demo.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_demo.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_draw.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_draw.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_tables.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_tables.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_widgets.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_widgets.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_impl_sdl.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_impl_sdl.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_impl_sdl.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_impl_sdl.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
-  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_impl_opengl3.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj: CXX_COMPILER__imgui_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
+  DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_impl_opengl3.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
 
 # =============================================================================
@@ -298,13 +329,14 @@ build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: CXX_COM
 #############################################
 # Link the static library abcg\external\imgui\libimgui.a
 
-build abcg/external/imgui/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Release abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.o abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.o abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -O3 -DNDEBUG -flto=thin
+build abcg/external/imgui/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Debug abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.obj abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.obj abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.obj abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.obj abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.obj abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g -flto -fno-fat-lto-objects
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.pdb
   TARGET_FILE = abcg\external\imgui\libimgui.a
-  TARGET_PDB = imgui.a.dbg
+  TARGET_PDB = abcg\external\imgui\libimgui.pdb
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -373,12 +405,14 @@ build abcg/external/fmt/edit_cache: phony abcg/external/fmt/CMakeFiles/edit_cach
 
 build cmake_object_order_depends_target_fmt: phony || abcg/external/fmt/CMakeFiles/fmt.dir
 
-build abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.o: CXX_COMPILER__fmt_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt/format.cc || cmake_object_order_depends_target_fmt
-  DEP_FILE = abcg\external\fmt\CMakeFiles\fmt.dir\format.cc.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -std=gnu++20
+build abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.obj: CXX_COMPILER__fmt_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt/format.cc || cmake_object_order_depends_target_fmt
+  DEP_FILE = abcg\external\fmt\CMakeFiles\fmt.dir\format.cc.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -std=gnu++2a
   INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt
   OBJECT_DIR = abcg\external\fmt\CMakeFiles\fmt.dir
   OBJECT_FILE_DIR = abcg\external\fmt\CMakeFiles\fmt.dir
+  TARGET_COMPILE_PDB = abcg\external\fmt\CMakeFiles\fmt.dir\fmt.pdb
+  TARGET_PDB = abcg\external\fmt\libfmt.pdb
 
 
 # =============================================================================
@@ -388,13 +422,14 @@ build abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.o: CXX_COMPILER__fmt_Releas
 #############################################
 # Link the static library abcg\external\fmt\libfmt.a
 
-build abcg/external/fmt/libfmt.a: CXX_STATIC_LIBRARY_LINKER__fmt_Release abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.o
-  LANGUAGE_COMPILE_FLAGS = -O3 -DNDEBUG -flto=thin
+build abcg/external/fmt/libfmt.a: CXX_STATIC_LIBRARY_LINKER__fmt_Debug abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.obj
+  LANGUAGE_COMPILE_FLAGS = -g -flto -fno-fat-lto-objects
   OBJECT_DIR = abcg\external\fmt\CMakeFiles\fmt.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = abcg\external\fmt\CMakeFiles\fmt.dir\fmt.pdb
   TARGET_FILE = abcg\external\fmt\libfmt.a
-  TARGET_PDB = fmt.a.dbg
+  TARGET_PDB = abcg\external\fmt\libfmt.pdb
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -521,19 +556,23 @@ build examples/minesweeper/edit_cache: phony examples/minesweeper/CMakeFiles/edi
 
 build cmake_object_order_depends_target_minesweeper: phony || cmake_object_order_depends_target_abcg cmake_object_order_depends_target_fmt cmake_object_order_depends_target_imgui
 
-build examples/minesweeper/CMakeFiles/minesweeper.dir/main.cpp.o: CXX_COMPILER__minesweeper_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/examples/minesweeper/main.cpp || cmake_object_order_depends_target_minesweeper
-  DEP_FILE = examples\minesweeper\CMakeFiles\minesweeper.dir\main.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -Wall -Wextra -pedantic -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build examples/minesweeper/CMakeFiles/minesweeper.dir/main.cpp.obj: CXX_COMPILER__minesweeper_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/examples/minesweeper/main.cpp || cmake_object_order_depends_target_minesweeper
+  DEP_FILE = examples\minesweeper\CMakeFiles\minesweeper.dir\main.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = examples\minesweeper\CMakeFiles\minesweeper.dir
   OBJECT_FILE_DIR = examples\minesweeper\CMakeFiles\minesweeper.dir
+  TARGET_COMPILE_PDB = examples\minesweeper\CMakeFiles\minesweeper.dir\
+  TARGET_PDB = bin\minesweeper.pdb
 
-build examples/minesweeper/CMakeFiles/minesweeper.dir/openglwindow.cpp.o: CXX_COMPILER__minesweeper_Release C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/examples/minesweeper/openglwindow.cpp || cmake_object_order_depends_target_minesweeper
-  DEP_FILE = examples\minesweeper\CMakeFiles\minesweeper.dir\openglwindow.cpp.o.d
-  FLAGS = -O3 -DNDEBUG -flto=thin -Wall -Wextra -pedantic -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
+build examples/minesweeper/CMakeFiles/minesweeper.dir/openglwindow.cpp.obj: CXX_COMPILER__minesweeper_Debug C$:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/examples/minesweeper/openglwindow.cpp || cmake_object_order_depends_target_minesweeper
+  DEP_FILE = examples\minesweeper\CMakeFiles\minesweeper.dir\openglwindow.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/cppitertools -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/fmt -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/glm/.. -IC:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external/imgui -isystem C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/abcg/external
   OBJECT_DIR = examples\minesweeper\CMakeFiles\minesweeper.dir
   OBJECT_FILE_DIR = examples\minesweeper\CMakeFiles\minesweeper.dir
+  TARGET_COMPILE_PDB = examples\minesweeper\CMakeFiles\minesweeper.dir\
+  TARGET_PDB = bin\minesweeper.pdb
 
 
 # =============================================================================
@@ -541,17 +580,18 @@ build examples/minesweeper/CMakeFiles/minesweeper.dir/openglwindow.cpp.o: CXX_CO
 
 
 #############################################
-# Link the executable ..\public\minesweeper.js
+# Link the executable bin\minesweeper.exe
 
-build ../public/minesweeper.js: CXX_EXECUTABLE_LINKER__minesweeper_Release examples/minesweeper/CMakeFiles/minesweeper.dir/main.cpp.o examples/minesweeper/CMakeFiles/minesweeper.dir/openglwindow.cpp.o | abcg/libabcg.a abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a abcg/libabcg.a
-  FLAGS = -O3 -DNDEBUG -flto=thin
-  LINK_FLAGS = -sASSERTIONS=0 -sDISABLE_EXCEPTION_CATCHING=1 -sALLOW_MEMORY_GROWTH=1 -sEXIT_RUNTIME=1 -sFULL_ES3=1 -sMAX_WEBGL_VERSION=2 -sMIN_WEBGL_VERSION=2 -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -sWASM=1 --use-preload-plugins
-  LINK_LIBRARIES = abcg/libabcg.a  abcg/external/fmt/libfmt.a  abcg/external/imgui/libimgui.a
+build bin/minesweeper.exe: CXX_EXECUTABLE_LINKER__minesweeper_Debug examples/minesweeper/CMakeFiles/minesweeper.dir/main.cpp.obj examples/minesweeper/CMakeFiles/minesweeper.dir/openglwindow.cpp.obj | abcg/libabcg.a C$:/msys64/mingw64/lib/libglew32.dll.a abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a C$:/msys64/mingw64/lib/libSDL2main.a C$:/msys64/mingw64/lib/libSDL2.dll.a C$:/msys64/mingw64/lib/libSDL2_image.dll.a || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a abcg/libabcg.a
+  FLAGS = -g -flto -fno-fat-lto-objects
+  LINK_LIBRARIES = abcg/libabcg.a  -lmingw32  -lSDL2main  -lSDL2  -lglew32  -lopengl32  C:/msys64/mingw64/lib/libglew32.dll.a  -lopengl32  -lglu32  abcg/external/fmt/libfmt.a  abcg/external/imgui/libimgui.a  -lmingw32  -mwindows  C:/msys64/mingw64/lib/libSDL2main.a  C:/msys64/mingw64/lib/libSDL2.dll.a  C:/msys64/mingw64/lib/libSDL2_image.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = examples\minesweeper\CMakeFiles\minesweeper.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = ..\public\minesweeper.js
-  TARGET_PDB = minesweeper.js.dbg
+  POST_BUILD = cmd.exe /C "cd /D C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\examples\minesweeper && C:\msys64\mingw64\bin\cmake.exe -E make_directory C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper.dir && C:\msys64\mingw64\bin\cmake.exe -E copy C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper.exe C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper.dir/minesweeper.exe && C:\msys64\mingw64\bin\cmake.exe -E remove C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper.exe && cd /D C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\examples\minesweeper && C:\msys64\mingw64\bin\cmake.exe -E copy_directory C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/examples/minesweeper/assets C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper.dir/assets && cd /D C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\examples\minesweeper && C:\msys64\mingw64\bin\cmake.exe -E rename C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper.dir C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper"
+  PRE_LINK = cmd.exe /C "cd /D C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build\examples\minesweeper && C:\msys64\mingw64\bin\cmake.exe -E remove_directory C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/bin/minesweeper && cd C:\Users\gabi_\Documents\Heber\CG\minesweeper-cg\build"
+  TARGET_COMPILE_PDB = examples\minesweeper\CMakeFiles\minesweeper.dir\
+  TARGET_FILE = bin\minesweeper.exe
+  TARGET_IMPLIB = examples\minesweeper\libminesweeper.dll.a
+  TARGET_PDB = bin\minesweeper.pdb
 
 # =============================================================================
 # Target aliases.
@@ -568,9 +608,9 @@ build libfmt.a: phony abcg/external/fmt/libfmt.a
 
 build libimgui.a: phony abcg/external/imgui/libimgui.a
 
-build minesweeper: phony ../public/minesweeper.js
+build minesweeper: phony bin/minesweeper.exe
 
-build minesweeper.js: phony ../public/minesweeper.js
+build minesweeper.exe: phony bin/minesweeper.exe
 
 # =============================================================================
 # Folder targets.
@@ -643,7 +683,7 @@ build examples/all: phony examples/minesweeper/all
 #############################################
 # Folder: C:/Users/gabi_/Documents/Heber/CG/minesweeper-cg/build/examples/minesweeper
 
-build examples/minesweeper/all: phony ../public/minesweeper.js
+build examples/minesweeper/all: phony bin/minesweeper.exe
 
 # =============================================================================
 # Built-in targets
@@ -652,14 +692,14 @@ build examples/minesweeper/all: phony ../public/minesweeper.js
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../abcg/CMakeLists.txt ../abcg/external/CMakeLists.txt ../abcg/external/cppitertools/CMakeLists.txt ../abcg/external/fmt/CMakeLists.txt ../abcg/external/glm/CMakeLists.txt ../abcg/external/gsl/CMakeLists.txt ../abcg/external/imgui/CMakeLists.txt ../cmake/ABCg.cmake ../cmake/Common.cmake ../examples/CMakeLists.txt ../examples/minesweeper/CMakeLists.txt C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeNinjaFindMake.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystem.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-C.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-CXX.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-FindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../abcg/CMakeLists.txt ../abcg/external/CMakeLists.txt ../abcg/external/cppitertools/CMakeLists.txt ../abcg/external/fmt/CMakeLists.txt ../abcg/external/glm/CMakeLists.txt ../abcg/external/gsl/CMakeLists.txt ../abcg/external/imgui/CMakeLists.txt ../cmake/ABCg.cmake ../cmake/Common.cmake ../cmake/FindSDL2.cmake ../cmake/FindSDL2_image.cmake ../cmake/Sanitizers.cmake ../cmake/StaticAnalyzers.cmake ../cmake/Warnings.cmake ../examples/CMakeLists.txt ../examples/minesweeper/CMakeLists.txt C$:/msys64/mingw64/lib/cmake/glew/CopyImportedTargetProperties.cmake C$:/msys64/mingw64/lib/cmake/glew/glew-config.cmake C$:/msys64/mingw64/lib/cmake/glew/glew-targets-release.cmake C$:/msys64/mingw64/lib/cmake/glew/glew-targets.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCCompilerABI.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineRCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeNinjaFindMake.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeRCCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystem.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestRCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-C.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-CXX.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIncludeFile.c.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIncludeFile.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckLibraryExists.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindGLEW.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindOpenGL.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindPackageMessage.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindThreads.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-Determine-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeRCCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../abcg/CMakeLists.txt ../abcg/external/CMakeLists.txt ../abcg/external/cppitertools/CMakeLists.txt ../abcg/external/fmt/CMakeLists.txt ../abcg/external/glm/CMakeLists.txt ../abcg/external/gsl/CMakeLists.txt ../abcg/external/imgui/CMakeLists.txt ../cmake/ABCg.cmake ../cmake/Common.cmake ../examples/CMakeLists.txt ../examples/minesweeper/CMakeLists.txt C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/gabi_/Documents/Heber/CG/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeNinjaFindMake.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystem.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-C.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-CXX.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-FindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../abcg/CMakeLists.txt ../abcg/external/CMakeLists.txt ../abcg/external/cppitertools/CMakeLists.txt ../abcg/external/fmt/CMakeLists.txt ../abcg/external/glm/CMakeLists.txt ../abcg/external/gsl/CMakeLists.txt ../abcg/external/imgui/CMakeLists.txt ../cmake/ABCg.cmake ../cmake/Common.cmake ../cmake/FindSDL2.cmake ../cmake/FindSDL2_image.cmake ../cmake/Sanitizers.cmake ../cmake/StaticAnalyzers.cmake ../cmake/Warnings.cmake ../examples/CMakeLists.txt ../examples/minesweeper/CMakeLists.txt C$:/msys64/mingw64/lib/cmake/glew/CopyImportedTargetProperties.cmake C$:/msys64/mingw64/lib/cmake/glew/glew-config.cmake C$:/msys64/mingw64/lib/cmake/glew/glew-targets-release.cmake C$:/msys64/mingw64/lib/cmake/glew/glew-targets.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCCompilerABI.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineRCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeNinjaFindMake.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeRCCompiler.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystem.cmake.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCXXCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeTestRCCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-C.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/CMakeLists-CXX.txt.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/foo.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.c C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIPOSupported/main.cpp C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIncludeFile.c.in C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckIncludeFile.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CheckLibraryExists.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindGLEW.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindOpenGL.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindPackageMessage.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/FindThreads.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Internal/CheckSourceCompiles.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-Determine-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.3/CMakeCCompiler.cmake CMakeFiles/3.21.3/CMakeCXXCompiler.cmake CMakeFiles/3.21.3/CMakeRCCompiler.cmake CMakeFiles/3.21.3/CMakeSystem.cmake: phony
 
 
 #############################################

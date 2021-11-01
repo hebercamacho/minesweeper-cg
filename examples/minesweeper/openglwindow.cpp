@@ -8,19 +8,32 @@
 void OpenGLWindow::initializeGL() {
   // Load a new font
   ImGuiIO &io{ImGui::GetIO()};
-  //const auto filename{getAssetsPath() + "Inconsolata-Medium.ttf"};
-  m_font = io.Fonts->AddFontDefault();
+  const auto filename{getAssetsPath() + "Inconsolata-Medium.ttf"};
+  m_font = io.Fonts->AddFontFromFileTTF(filename.c_str(), 20.0);
   if (m_font == nullptr) {
     throw abcg::Exception{abcg::Exception::Runtime("Cannot load font file")};
   }
 
+  // Create program to render the other objects
+  m_objectsProgram = createProgramFromFile(getAssetsPath() + "objects.vert",
+                                           getAssetsPath() + "objects.frag");
+
   abcg::glClearColor(0, 0, 0, 1);
+
+  #if !defined(__EMSCRIPTEN__)
+  abcg::glEnable(GL_PROGRAM_POINT_SIZE);
+  #endif
 
   restart();
 }
 
+void OpenGLWindow::terminateGL() {
+  abcg::glDeleteProgram(m_objectsProgram);
+}
+
 void OpenGLWindow::paintGL() { 
   abcg::glClear(GL_COLOR_BUFFER_BIT); 
+  abcg::glViewport(0, 0, m_viewportWidth, m_viewportHeight);
 }
 
 void OpenGLWindow::paintUI() {
@@ -32,7 +45,11 @@ void OpenGLWindow::paintUI() {
     ImGui::SetNextWindowSize(ImVec2(appWindowWidth, appWindowHeight));
     ImGui::SetNextWindowPos(ImVec2(0, 0));
 
-    const auto flags{ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoResize};
+    const auto flags{ImGuiWindowFlags_MenuBar | 
+                     ImGuiWindowFlags_NoResize | 
+                     //ImGuiWindowFlags_NoInputs | 
+                     ImGuiWindowFlags_NoBackground 
+                     };
     ImGui::Begin("Campo minado", nullptr, flags);
 
     // Menu com botão de restart pra reiniciar o jogo
@@ -51,6 +68,7 @@ void OpenGLWindow::paintUI() {
             ImGui::MenuItem("Enabled", "", &enabled);
             static int n = 0;
             ImGui::Combo("Combo", &n, "Facil (9x9)\0Medio(16x16)\0Dificil(21x21)\0\0");
+            //TODO alterar isso aqui pra funcionar
             // switch(n)
             // {
             //   case 0:
@@ -72,9 +90,9 @@ void OpenGLWindow::paintUI() {
     
     // Texto explicativo (ganhou/perdeu/jogando)
     std::string text;
-    switch (m_gameState) {
+    switch (m_gameData.m_gameState) {
       case GameState::Start:
-        text = "Clique em um quadrado para começar";
+        text = "Clique em um quadrado para começar.";
         break;
       case GameState::Play:
         // text = fmt::format("{} turn", m_turn ? 'X' : 'O');
@@ -115,12 +133,12 @@ void OpenGLWindow::paintUI() {
         
         if (!m_clicado.at(offset)) { //esse if permite clicar só se estiver vazio
           if (ImGui::IsItemClicked()) {
-            if (m_gameState == GameState::Start)
+            if (m_gameData.m_gameState == GameState::Start)
             {
               fmt::print(stdout, "Primeira celula clicada: {}X{}.\n", i, j);
               preencher_tabuleiro(offset);
             }
-            if (m_gameState == GameState::Play)
+            if (m_gameData.m_gameState == GameState::Play)
             {
               fmt::print(stdout, "Clicado na celula {}X{}.\n", i, j);
               m_clicado.at(offset) = true; //revelado o que está ocultado
@@ -154,7 +172,7 @@ void OpenGLWindow::paintUI() {
 }
 
 void OpenGLWindow::checkBoard() {
-  if (m_gameState != GameState::Play) return; //se ganhou ou perdeu, manter a tela igual
+  if (m_gameData.m_gameState != GameState::Play) return; //se ganhou ou perdeu, manter a tela igual
 
   int contadas = 0;
   // checar nas linhas e colunas se tem uma bomba clicada
@@ -166,7 +184,7 @@ void OpenGLWindow::checkBoard() {
         if(m_bombas.at(offset) == 'X')
         {
           fmt::print(stdout, "Bomba clicada em {}X{}.\n", i, j);
-          m_gameState = GameState::Lost;
+          m_gameData.m_gameState = GameState::Lost;
           m_clicado.fill(true); //revelar
           return; //não continuar pra checar se ganhou
         }
@@ -177,7 +195,7 @@ void OpenGLWindow::checkBoard() {
   // checar se o jogador ganhou
   if(contadas == m_N * m_N - bombas)
   {
-     m_gameState = GameState::Won;
+     m_gameData.m_gameState = GameState::Won;
      m_clicado.fill(true); //revelar
   }
 }
@@ -212,7 +230,7 @@ void OpenGLWindow::preencher_tabuleiro(int clicada)
       fmt::print(stdout, "Celula {} foi a clicada ou ja possuia bomba.\n", offset);
     }
   }
-  m_gameState = GameState::Play;
+  m_gameData.m_gameState = GameState::Play;
 }
 
 bool OpenGLWindow::isVizinho(int n, int v)
@@ -332,8 +350,25 @@ void OpenGLWindow::clicar_nos_vizinhos(int n)
 
 //função para reiniciar o jogo para as configurações iniciais
 void OpenGLWindow::restart() {
-  m_gameState = GameState::Start;
+  m_gameData.m_gameState = GameState::Start;
   m_bombas.fill('0');
   m_clicado.fill(false);
   fmt::print(stdout, "Jogo reiniciado.\n");
+}
+
+// eventos de input
+void OpenGLWindow::handleEvent(SDL_Event &event) {
+  // Mouse events
+   if (event.type == SDL_MOUSEBUTTONDOWN) {
+    if (event.button.button == SDL_BUTTON_LEFT)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Left));
+    if (event.button.button == SDL_BUTTON_RIGHT)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Right));
+  }
+  if (event.type == SDL_MOUSEBUTTONUP) {
+    if (event.button.button == SDL_BUTTON_LEFT)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Left));
+    if (event.button.button == SDL_BUTTON_RIGHT)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Right));
+  }
 }
